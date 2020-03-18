@@ -4,25 +4,28 @@ import org.joml.Vector2f;
 public class Entity {
 
     private VBO vbo;
-    //	Camara camara;
-    //  ArrayList<sheet> sheets;
     private float[] vertices,tex_coords,colors;
-    //  sheet sheet;
+    private Sheet sheet;
     private int i=0,j=0;
     private float d;
     private Vector2f pos,vel,acc; //,center;
 
+    //  private Shader shader;
+    //	Camara camara;
+    //  ArrayList<sheet> sheets;
     //  public Matrix2f rotate;
     //  public AABB box;
 
-    public Entity(Shader shader, float x, float y, float size) {
+    public Entity(float x, float y, float size) {
+
         // sheets = new ArrayList<>();
-        pos=new Vector2f(x,y);
         // center=new Vector2f(x-0.05f,y);
+        // this.box=new AABB(pos,size/2);
+
+        pos=new Vector2f(x,y);
         vel=new Vector2f(0,0);
         acc=new Vector2f(0,0);
         d = size /2;
-        // this.box=new AABB(pos,size/2);
 
         vertices = new float[] {
                 pos.x -d,pos.y +d,0,    //top left
@@ -45,7 +48,7 @@ public class Entity {
                 1.0f,1.0f,1.0f  //bottom left
         };
 
-        //  vbo=new vbo(vertices,tex_coords,colors);
+        vbo=new VBO(vertices,tex_coords,colors);
 
     }
 
@@ -54,12 +57,16 @@ public class Entity {
         vbo=new VBO(vertices,tex_coords,colors);
     }
 
-    public void setSheet(String name,int xn,int yn) {
-        //  sheet = new sheet(name,xn,yn);
+    public void setShader(Shader shader){
+        sheet.setShader(shader);
+    }
+
+    public void setSheet(Sheet sheet) {
+        this.sheet = sheet;
     }
 
     public void draw() {
-        //  sheet.bind(i,j,shader);
+        sheet.bind_on_frame(i,j);
         vbo.render();
     }
 
@@ -88,7 +95,6 @@ public class Entity {
         acc.y+=y;
     }
 
-
     public void update() {
         //  this.box=new AABB(pos,size/2);
         if(!vel.equals(0, 0) || !acc.equals(0,0)) {
@@ -103,8 +109,7 @@ public class Entity {
                     pos.x+d,pos.y-d,0,	//bottom right
                     pos.x-d,pos.y-d,0   //bottom left
             };
-
-            vbo.newVs(vertices);
+            vbo.setVertices(vertices);
         }
     }
 

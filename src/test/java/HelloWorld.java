@@ -1,18 +1,12 @@
-import de.matthiasmann.twl.utils.PNGDecoder;
+
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
-
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.nio.*;
-import java.util.ArrayList;
-
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL30.glGenerateMipmap;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
@@ -107,30 +101,11 @@ public class HelloWorld {
         // Set the clear color
         glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
 
-        // Run the rendering loop until the user has attempted to close
-        // the window or has pressed the ESCAPE key.
-
-
 
         while ( !glfwWindowShouldClose(window) ) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
-           /* a.bind();
-            glBegin(GL_QUADS);
-            glTexCoord2f(0, 0);
-            glVertex2f(-0.5f,0.5f);
-            glTexCoord2f(1, 0);
-            glVertex2f(0.5f,0.5f);
-            glTexCoord2f(1, 1);
-            glVertex2f(0.5f,-0.5f);
-            glTexCoord2f(0, 1);
-            glVertex2f(-0.5f,-0.5f);
-            glEnd();*/
-
             glfwSwapBuffers(window);// swap the color buffers
-
-            // Poll for window events. The key callback above will only be
-            // invoked during this call.
             glfwPollEvents();
         }
     }

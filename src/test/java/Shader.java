@@ -9,15 +9,14 @@ import org.lwjgl.BufferUtils;
 
 public class Shader {
     private int program;
-    private int vs;
-    private int fs;
+    private static String path="/Users/joseph/lwjgl3/src/main/resources/shaders/";
 
     public Shader(String filename) {
 
         program = glCreateProgram();
 
-        vs=glCreateShader(GL_VERTEX_SHADER);
-        glShaderSource(vs,readFile(filename+".vs"));
+        int vs = glCreateShader(GL_VERTEX_SHADER);
+        glShaderSource(vs,readFile(path+filename+".vs"));
         glCompileShader(vs);
 
         if(glGetShaderi(vs,GL_COMPILE_STATUS)!=1) {
@@ -25,8 +24,8 @@ public class Shader {
             System.exit(1);
         }
 
-        fs=glCreateShader(GL_FRAGMENT_SHADER);
-        glShaderSource(fs,readFile(filename+".fs"));
+        int fs = glCreateShader(GL_FRAGMENT_SHADER);
+        glShaderSource(fs,readFile(path+filename+".fs"));
         glCompileShader(fs);
 
         if(glGetShaderi(fs,GL_COMPILE_STATUS)!=1) {
@@ -35,9 +34,9 @@ public class Shader {
 
         }
 
-        glAttachShader(program,vs);
+        glAttachShader(program, vs);
 
-        glAttachShader(program,fs);
+        glAttachShader(program, fs);
 
         glBindAttribLocation(program,0,"vertices");
         glBindAttribLocation(program,1,"textures");

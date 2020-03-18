@@ -11,15 +11,29 @@ import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
 import static org.lwjgl.opengl.GL30.glGenerateMipmap;
 
 public class Sheet {
-
+    private Shader shader;
+    private int id;
     private Texture texture;
     private Matrix4f scale,translation;
 
-    Sheet(String filename, int xn, int yn) {
+    Sheet(int id){
+        this.id=id;
+    }
+
+    Sheet(int id,String filename,int xn,int yn){
+        this.id=id;
+        this.setTexture(filename,xn,yn);
+    }
+
+    public int getName(){
+        return this.id;
+    }
+
+    public void setTexture(String filename, int xn, int yn) {
         //this.n = n;
 
         try{
-            texture = loadTexture("/Users/joseph/lwjgl3/src/main/resources/textures/"+filename);
+            texture = loadTexture("/Users/joseph/lwjgl3/src/main/resources/textures/"+filename+".PNG");
         } catch(IOException e) {
             e.printStackTrace();
         }
@@ -37,19 +51,23 @@ public class Sheet {
         //System.out.println(this.texture.getTextureID()+" "+scale);
     }
 
-    public void bind(int x, int y, Shader shader) {
+    void setShader(Shader shader){
+        this.shader=shader;
+    }
+
+    void bind_on_frame(int x, int y) {
         texture.bind();
         scale.translate(x,y,0,translation);
         shader.setUniform("sampler", 0);
         shader.setUniform("texmodifier", translation);
     }
 
+
 	/*public void bind(int pos,Shader shader) {
 		int x =  pos / n;
 		int y =  pos % n;
 		bind(x,y,shader);
 	}*/
-
 
     private static Texture loadTexture(String fileName) throws IOException {
 

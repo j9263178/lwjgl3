@@ -1,12 +1,8 @@
 
 import java.nio.FloatBuffer;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.opengl.GL14;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL21;
-import org.lwjgl.opengl.GL41;
 import org.lwjgl.BufferUtils;
 
 
@@ -73,9 +69,10 @@ public class VBO {
         return buffer;
     }
 
-    public void newVs(float[] vertices) {
+    public void setVertices(float[] vertices) {
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, v_id);
         GL15.glBufferData(GL15.GL_ARRAY_BUFFER, createBuffer(vertices), GL15.GL_STATIC_DRAW);
+        GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0); //Not sure if necessary
     }
 
 }
