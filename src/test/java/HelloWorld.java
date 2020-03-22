@@ -12,10 +12,7 @@ import static org.lwjgl.system.MemoryUtil.*;
 
 public class HelloWorld {
 
-    //private ArrayList Textures = new ArrayList<Texture>();
-    // The window handle
     private long window;
-    private static Texture a;
 
     public void run() {
         System.out.println("Hello LWJGL " + Version.getVersion() + "!");
@@ -47,7 +44,7 @@ public class HelloWorld {
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
         glfwWindowHint(GLFW_FOCUS_ON_SHOW, GLFW_TRUE); // the window will be input focused when it's showed
         // Create the window
-        window = glfwCreateWindow(768, 768, "Hello World!", NULL, NULL);
+        window = glfwCreateWindow(800, 600, "Hello World!", NULL, NULL);
         if ( window == NULL )
             throw new RuntimeException("Failed to create the GLFW window");
 
@@ -86,30 +83,25 @@ public class HelloWorld {
     }
 
     private void loop()  {
-        // This line is critical for LWJGL's interoperation with GLFW's
-        // OpenGL context, or any context that is managed externally.
-        // LWJGL detects the context that is current in the current thread,
-        // creates the GLCapabilities instance and makes the OpenGL
-        // bindings available for use.
         GL.createCapabilities();
 
         // Important for texture rendering
         glEnable(GL_TEXTURE_2D);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-        // Set the clear color
+        GL11.glShadeModel(GL11.GL_SMOOTH);
         glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
 
+        EntityMaster fuck=new EntityMaster(window);
 
         while ( !glfwWindowShouldClose(window) ) {
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear the framebuffer
 
-            glfwSwapBuffers(window);// swap the color buffers
+            glClear(GL_COLOR_BUFFER_BIT |GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // clear the framebuffer
+            fuck.Update();
+            glfwSwapBuffers(window);
             glfwPollEvents();
         }
     }
-
 
     public static void main(String[] args) {
         new HelloWorld().run();

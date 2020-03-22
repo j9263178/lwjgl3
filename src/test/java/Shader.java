@@ -16,7 +16,7 @@ public class Shader {
         program = glCreateProgram();
 
         int vs = glCreateShader(GL_VERTEX_SHADER);
-        glShaderSource(vs,readFile(path+filename+".vs"));
+        glShaderSource(vs,readFile(filename+".vs"));
         glCompileShader(vs);
 
         if(glGetShaderi(vs,GL_COMPILE_STATUS)!=1) {
@@ -25,7 +25,7 @@ public class Shader {
         }
 
         int fs = glCreateShader(GL_FRAGMENT_SHADER);
-        glShaderSource(fs,readFile(path+filename+".fs"));
+        glShaderSource(fs,readFile(filename+".fs"));
         glCompileShader(fs);
 
         if(glGetShaderi(fs,GL_COMPILE_STATUS)!=1) {
@@ -69,14 +69,8 @@ public class Shader {
     public void setUniform(String name,Matrix4f value) {
         int location = glGetUniformLocation(program , name);
         FloatBuffer buffer = BufferUtils.createFloatBuffer(16);
-
         value.get(buffer);
-
-        if(location != -1) {
-
-            glUniformMatrix4fv(location, false, buffer);
-
-        }
+        glUniformMatrix4fv(location, false, buffer);
     }
 
     public void bind() {
@@ -91,7 +85,7 @@ public class Shader {
         StringBuilder string = new StringBuilder();
         BufferedReader br ;
         try {
-            br = new BufferedReader(new FileReader(new File("./shaders/" + filename)));
+            br = new BufferedReader(new FileReader(new File(path + filename)));
             String line;
 
             while((line = br.readLine())!=null) {

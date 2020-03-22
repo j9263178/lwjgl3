@@ -1,16 +1,19 @@
 
 import java.nio.FloatBuffer;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.BufferUtils;
 
 
-public class VBO {
+public class Model {
     private int draw_count;
     private int v_id,t_id,c_id;
 
-    public VBO(float[] vertices, float[] tex_coords, float[] colors) {
+    public Model(float[] vertices, float[] tex_coords, float[] colors) {
 
         draw_count = vertices.length/2;
 
@@ -29,8 +32,6 @@ public class VBO {
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0);
 
     }
-
-
 
     public void render() {
 	/*	GL11.glEnableClientState(GL11.GL_VERTEX_ARRAY);
@@ -61,7 +62,6 @@ public class VBO {
         GL20.glDisableVertexAttribArray(2);
     }
 
-
     public FloatBuffer createBuffer(float[] vertices) {
         FloatBuffer buffer = BufferUtils.createFloatBuffer(vertices.length);
         buffer.put(vertices);
@@ -75,4 +75,13 @@ public class VBO {
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0); //Not sure if necessary
     }
 
+    public int getV_id(){
+        return v_id;
+    }
+    public int getT_id(){
+        return t_id;
+    }
+    public int getC_id(){
+        return c_id;
+    }
 }
