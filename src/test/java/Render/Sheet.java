@@ -1,3 +1,5 @@
+package Render;
+
 import org.joml.Matrix4f;
 
 public class Sheet extends Texture {
@@ -5,7 +7,7 @@ public class Sheet extends Texture {
     private Matrix4f scale,translation;
     private int xn,yn;
 
-    Sheet(String filename,int xn,int yn){
+    public Sheet(String filename, int xn, int yn){
         super(filename);
         this.xn=xn;
         this.yn=yn;
@@ -17,11 +19,11 @@ public class Sheet extends Texture {
     public int getXn(){return this.xn;}
     public int getYn(){return this.yn;}
 
-    void setShader(Shader shader){
+    public void setShader(Shader shader){
         this.shader=shader;
     }
 
-    void bind_on_frame(int x, int y) {
+    public void bind_on_frame(int x, int y) {
         this.bind();
         scale.translate(x,y,0,translation);
         shader.setUniform("sampler", 0);

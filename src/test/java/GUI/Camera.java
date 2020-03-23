@@ -1,4 +1,6 @@
-
+package GUI;
+import GUI.Camera;
+import Entity.Movable;
 import org.joml.*;
 
 public class Camera extends Movable {

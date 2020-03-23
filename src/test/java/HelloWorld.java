@@ -1,4 +1,7 @@
 
+import GUI.SyncTimer;
+import Scenes.bulletTest;
+import Scenes.Scene;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
@@ -14,7 +17,7 @@ public class HelloWorld {
 
     private long window;
 
-    public void run() {
+    public void run() throws Exception {
         System.out.println("Hello LWJGL " + Version.getVersion() + "!");
 
         init();
@@ -76,13 +79,12 @@ public class HelloWorld {
         // Make the OpenGL context current
         glfwMakeContextCurrent(window);
         // Enable v-sync
-        glfwSwapInterval(1);
-
+        glfwSwapInterval(0);
         // Make the window visible
         glfwShowWindow(window);
     }
 
-    private void loop()  {
+    private void loop() throws Exception {
         GL.createCapabilities();
 
         // Important for texture rendering
@@ -92,18 +94,21 @@ public class HelloWorld {
         GL11.glShadeModel(GL11.GL_SMOOTH);
         glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
 
-        EntityMaster fuck=new EntityMaster(window);
+        Scene currentScene=new bulletTest(window);
 
+        SyncTimer test = new SyncTimer(SyncTimer.LWJGL_GLFW);
+        test.setNewMode(1);
         while ( !glfwWindowShouldClose(window) ) {
 
             glClear(GL_COLOR_BUFFER_BIT |GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // clear the framebuffer
-            fuck.Update();
+            currentScene.render();
             glfwSwapBuffers(window);
             glfwPollEvents();
+            test.sync(50);
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         new HelloWorld().run();
     }
 

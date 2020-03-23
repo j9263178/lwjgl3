@@ -2,31 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da18324-6a20-401a-8cd7-31ba6b7fa477" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/EntityMaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Font/EasyFont.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Font/FontDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Font/GLFWUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Font/IOUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Font/Truetype.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Movable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Timer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GUI/SyncTimer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GameState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EntityMaster.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Shader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Shader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/VBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Shader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Shader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Sheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Timer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Camera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/EntityMaster.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HelloWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Shader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Shader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Texture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Texture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/myfun.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/vbo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Input.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Model.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Movable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Shader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Texture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Timer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sheet.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -152,7 +155,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584336136448</updated>
-      <workItem from="1584336143974" duration="66733000" />
+      <workItem from="1584336143974" duration="93873000" />
     </task>
     <servers />
   </component>

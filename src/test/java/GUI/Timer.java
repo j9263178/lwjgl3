@@ -1,3 +1,5 @@
+package GUI;
+
 public class Timer {
     private double resetTime;
     private double currentTime;

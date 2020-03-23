@@ -1,3 +1,4 @@
+package GUI;
 
 import static org.lwjgl.glfw.GLFW.*;
 

@@ -1,3 +1,4 @@
+package Entity;
 
 import org.joml.Vector2f;
 
@@ -43,7 +44,40 @@ public class Movable {
 
         model=new Model(vertices,tex_coords,colors);
     }
+    public Movable(float x, float y, float w,float h) {
 
+        // sheets = new ArrayList<>();
+        // center=new Vector2f(x-0.05f,y);
+        // this.box=new AABB(pos,size/2);
+
+        pos=new Vector2f(x,y);
+        vel=new Vector2f(0,0);
+        acc=new Vector2f(0,0);
+        w = w/2;
+        h= h/2;
+        vertices = new float[] {
+                pos.x -w,pos.y +h,0,    //top left
+                pos.x +w,pos.y +h,0,    //top right
+                pos.x +w,pos.y -h,0,    //bottom right
+                pos.x -w,pos.y -h,0     //bottom left
+        };
+
+        tex_coords = new float[] {
+                0,0,  //top left
+                1,0,  //top right
+                1,1,  //bottom right
+                0,1   //bottom left
+        };
+
+        colors = new float[] {
+                1.0f,1.0f,1.0f, //top left
+                1.0f,1.0f,1.0f,	//top right
+                1.0f,1.0f,1.0f,	//bottom right
+                1.0f,1.0f,1.0f  //bottom left
+        };
+
+        model=new Model(vertices,tex_coords,colors);
+    }
     public void setPos(float x,float y) {
         pos.x=x;
         pos.y=y;
@@ -68,7 +102,15 @@ public class Movable {
         acc.x+=x;
         acc.y+=y;
     }
-
+    public Vector2f getPos(){
+        return this.pos;
+    }
+    public Vector2f getVel(){
+        return this.vel;
+    }
+    public Vector2f getAcc(){
+        return this.acc;
+    }
     public void update() {
         //  this.box=new AABB(pos,size/2);
         if(!vel.equals(0, 0) || !acc.equals(0,0)) {
