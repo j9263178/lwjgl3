@@ -1,13 +1,16 @@
 package Entity;
 import  Render.*;
-import  GUI.Camera;
+import Render.Camera;
+import org.joml.Vector2f;
+import org.joml.Vector3f;
+
 public class Entity extends Movable {
 
     private Model model;
     private Sheet sheet;
     private int i=0,j=0;
     private Shader shader;
-    public boolean stopAnimation = false,visible=true;
+    public boolean stopAnimation = false,visible=true,damageble=true;
     private Camera camera;
     //	Camara camara;
     //  ArrayList<sheet> sheets;
@@ -34,7 +37,6 @@ public class Entity extends Movable {
 
     public void draw() {
         shader.bind();
-        camera.update();
         shader.setUniform("projection",this.camera.getProjection().scale(256));
         sheet.bind_on_frame(i,j);
         model.render();
@@ -51,6 +53,7 @@ public class Entity extends Movable {
     }
 
     private boolean dir=true;
+
     public void nextFrame() {
         if(this.i==sheet.getXn()-1) dir=false;
         if(this.i==0) dir=true;

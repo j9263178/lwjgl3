@@ -1,6 +1,7 @@
 package GUI;
 
 import Entity.Movable;
+import Render.Camera;
 import Render.Shader;
 import Render.Sheet;
 
@@ -82,7 +83,6 @@ public class Animation extends Movable {
         if(perFrameCounter>perFrameTimes)
             if(frame<sheet.getXn()) frame++;
         shader.bind();
-        camera.update();
         shader.setUniform("projection",this.camera.getProjection().scale(scale));
         sheet.bind_on_frame(frame,0);
         model.render();

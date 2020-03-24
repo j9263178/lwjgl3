@@ -2,33 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da18324-6a20-401a-8cd7-31ba6b7fa477" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/GUI/SyncTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EntityMaster.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Shader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Shader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Sheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Texture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Timer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Camera.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/EntityMaster.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HelloWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Input.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Model.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Movable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Shader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Texture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Timer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GUI/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/Camera.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/InMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/InMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/OutMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/OutMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
