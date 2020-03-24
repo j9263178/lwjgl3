@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da18324-6a20-401a-8cd7-31ba6b7fa477" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GUI/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/Animation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/Camera.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/InMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/InMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/OutMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/OutMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HelloWorld">
+  <component name="RunManager" selected="Application.Map">
     <configuration name="EasyFont" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Font.EasyFont" />
       <module name="lwjgl3" />
@@ -98,6 +88,19 @@
       <option name="MAIN_CLASS_NAME" value="HelloWorld" />
       <module name="lwjgl3" />
       <option name="VM_PARAMETERS" value="-XstartOnFirstThread" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Map" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Map.Map" />
+      <module name="lwjgl3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Map.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,9 +124,11 @@
       <item itemvalue="Application.HelloWorld" />
       <item itemvalue="Application.Truetype" />
       <item itemvalue="Application.EasyFont" />
+      <item itemvalue="Application.Map" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Map" />
         <item itemvalue="Application.HelloWorld" />
         <item itemvalue="Application.EasyFont" />
         <item itemvalue="Application.Truetype" />
@@ -141,6 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584336136448</updated>
       <workItem from="1584336143974" duration="93873000" />
+      <workItem from="1585057375065" duration="5721000" />
     </task>
     <servers />
   </component>
@@ -152,7 +158,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
