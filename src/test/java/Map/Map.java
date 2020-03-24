@@ -3,6 +3,8 @@ import Render.Sheet;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.zip.DataFormatException;
@@ -21,9 +23,9 @@ public class Map {
     }
 
     Sheet tileset;
-    ArrayList<tile> tiles;
+    static ArrayList<tile> tiles;
     String TileData,SolidData;
-    int width,height;
+    int width=16,height=10;
 
     Map(){
 
@@ -61,15 +63,19 @@ public class Map {
         return output;
     }
 
-    private void loadMap(String filename){
-        String baselayer="";
-        String solidlayer="";
+    private void loadMap(String filename) throws IOException {
+        String ori = new String(Files.readAllBytes(Paths.get(filename)));
+        String baselayer=ori.split(",")[0].replace("\\","");
+        String solidlayer=ori.split(",")[1].replace("\\","");
+
         byte[] a= Base64.getDecoder().decode(baselayer);
         byte[] b=decompress(a);
-        byte[] c= Base64.getDecoder().decode(baselayer);
-        byte[] d=decompress(c);
-        int tem=0;
 
+        byte[] c= Base64.getDecoder().decode(solidlayer);
+        byte[] d=decompress(c);
+
+        int tem=0;
+        tiles=new ArrayList<>();
         for(int i=0;i<b.length;i++){
             if(i%4==0) {
                 boolean is=false;
@@ -84,14 +90,11 @@ public class Map {
     }
 
     public static void main(String args[]) throws IOException, DataFormatException {
-        String hi= "eJwNw0c7ggEAAODvr1CImz1uVuSWhnEzIm5Cxi0r3CLzFkJuZvHrvO/zvE1BEDQbMmyLrbYZsd0OO+2y2x577bPfAQcdctgRRx1z3KgTThpzyrjTJkyaMu2Ms84574KLLrlsxhVXzbrmuhvm3HTLbfPuuOue+xY88NAjjz2x6KlnnlvywkvLXnntjbfeeW/FBx99suqzL75a8813P/z0y29/rNvw1z//AaffKsc=";
-
-
-        byte[] a= Base64.getDecoder().decode(hi);
-        byte[] b=decompress(a);
-        int cur=0;
-        for(byte i:b) if(cur++%4==0) if(i<0) System.out.print(256+i+" "); else System.out.print(i+" ");
-
+        Map fuck =new Map();
+        fuck.loadMap("/Users/joseph/lwjgl3/src/test/java/Map/h.txt");
+        for(tile t:tiles){
+            System.out.println(t.id[0]+" "+t.id[1]+" "+ t.isSolid);
+        }
     }
 
 }

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da18324-6a20-401a-8cd7-31ba6b7fa477" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Map/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Map/h.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Map/Map$tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Map/Map$tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Map/Map.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584336136448</updated>
       <workItem from="1584336143974" duration="93873000" />
-      <workItem from="1585057375065" duration="5721000" />
+      <workItem from="1585057375065" duration="7108000" />
     </task>
     <servers />
   </component>
