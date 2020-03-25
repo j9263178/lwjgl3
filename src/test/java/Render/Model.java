@@ -1,4 +1,4 @@
-package Entity;
+package Render;
 
 import java.nio.FloatBuffer;
 import java.util.ArrayList;

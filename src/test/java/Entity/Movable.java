@@ -1,5 +1,6 @@
 package Entity;
 
+import Render.Model;
 import org.joml.Vector2f;
 
 public class Movable {
@@ -44,6 +45,7 @@ public class Movable {
 
         model=new Model(vertices,tex_coords,colors);
     }
+
     public Movable(float x, float y, float w,float h) {
 
         // sheets = new ArrayList<>();
@@ -78,6 +80,7 @@ public class Movable {
 
         model=new Model(vertices,tex_coords,colors);
     }
+
     public void setPos(float x,float y) {
         pos.x=x;
         pos.y=y;

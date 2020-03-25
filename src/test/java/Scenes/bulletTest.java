@@ -1,5 +1,7 @@
 package Scenes;
+import Map.*;
 
+import java.io.IOException;
 import java.util.*;
 import Render.*;
 import GUI.Timer;
@@ -14,6 +16,7 @@ import static org.lwjgl.glfw.GLFW.*;
 
 public class bulletTest implements Scene {
     Random r;
+    TileMap fuck;
     private Entity main;
     private Shader shader;
     private double fps=55;
@@ -31,13 +34,14 @@ public class bulletTest implements Scene {
     private int[] stateTime={10,10,1,30};
 
     //float[][] circleBulletsPos={{0,-0.2f}};
-    public bulletTest(long window){
+    public bulletTest(long window) throws IOException {
         input = new Input(window);
         init();
     }
 
     @Override
     public void render() {
+        fuck.render();
         mainCamera.getPosition().lerp(new Vector3f(0.64f*main.getPos().x,0.86f*main.getPos().y,0).mul(-1,new Vector3f()), 0.05f);
         onInput();
         onBossStates();
@@ -49,7 +53,7 @@ public class bulletTest implements Scene {
         input.update();
     }
     @Override
-    public void init() {
+    public void init() throws IOException {
         dead=false;
         Sheet s4life=new Sheet("life",7,1);
         s4bullet = new Sheet("test2", 7, 1);
@@ -85,6 +89,13 @@ public class bulletTest implements Scene {
                     s4life));
         }
         r=new Random();
+
+        fuck =new TileMap(10,10,new Sheet("鄉村之道",30,16),0.4f,shader,mainCamera);
+        fuck.loadMap("/Users/joseph/lwjgl3/src/test/java/Map/h.txt");
+       /* for(Tile t:fuck.getTiles()){
+            System.out.println("pos:"+t.getXY()[0]+" "+t.getXY()[1]+"  id:"+t.id[0]+" "+t.id[1]+" "+ t.isSolid );
+        }*/
+
     }
     public void onInput(){
 

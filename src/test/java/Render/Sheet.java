@@ -30,5 +30,12 @@ public class Sheet extends Texture {
         shader.setUniform("texmodifier", translation);
         //texture.unbind();
     }
+    public void bind_on_tile(int x, int y) {
+        this.bind();
+        scale.translate(x-1,y-1,0,translation);
+        shader.setUniform("sampler", 0);
+        shader.setUniform("texmodifier", translation);
+        //texture.unbind();
+    }
 
 }

@@ -1,8 +1,6 @@
 package Entity;
 import  Render.*;
 import Render.Camera;
-import org.joml.Vector2f;
-import org.joml.Vector3f;
 
 public class Entity extends Movable {
 

@@ -23,7 +23,9 @@ public class Texture {
     }
 
     public void bind(){
+
         glBindTexture(GL_TEXTURE_2D, this.id);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     }
 
     private static int loadTexture(String fileName) throws IOException {
