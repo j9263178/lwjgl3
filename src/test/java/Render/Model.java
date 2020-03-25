@@ -72,7 +72,7 @@ public class Model {
 
     public void setVertices(float[] vertices) {
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, v_id);
-        GL15.glBufferData(GL15.GL_ARRAY_BUFFER, createBuffer(vertices), GL15.GL_STATIC_DRAW);
+        GL15.glBufferData(GL15.GL_ARRAY_BUFFER, createBuffer(vertices), GL15.GL_STREAM_DRAW);
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0); //Not sure if necessary
     }
 

@@ -30,7 +30,7 @@ public class Animation extends Movable {
         super(x, y, w ,h);
         this.sheet=sheet;
         this.shader=shader;
-        sheet.setShader(this.shader);
+       // sheet.setShader(this.shader);
         camera = new Camera(800,600);
     }
 

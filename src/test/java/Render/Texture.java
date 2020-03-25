@@ -23,9 +23,7 @@ public class Texture {
     }
 
     public void bind(){
-
         glBindTexture(GL_TEXTURE_2D, this.id);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     }
 
     private static int loadTexture(String fileName) throws IOException {
@@ -53,8 +51,8 @@ public class Texture {
         glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
         //set the texture parameters, can be GL_LINEAR or GL_NEAREST
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
         //upload texture
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, decoder.getWidth(), decoder.getHeight(),

@@ -1,8 +1,9 @@
 package Map;
+import Entity.Entity;
 import Render.Sheet;
 import Render.Camera;
 import Render.Shader;
-
+import java.math.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +15,6 @@ import java.util.zip.Inflater;
 
 public class TileMap {
 
-    private Shader shader;
     private Camera camera;
     private Sheet tileSet;
     private ArrayList<Tile> tiles;
@@ -22,19 +22,22 @@ public class TileMap {
     float x=0;
     float y=0;
     private float tilesize;
+    private Entity main;
 
-    public TileMap(int w, int h, Sheet tileSet, float tilesize,Shader shader,Camera camera) {
+    public TileMap(int w, int h, Sheet tileSet, float tilesize, Camera camera, Entity main) {
         MapWidth=w;
         MapHeight=h;
         this.tileSet=tileSet;
         this.tilesize=tilesize;
-        this.shader = shader;
-        this.tileSet.setShader(this.shader);
         this.camera = camera;
+        this.main=main;
     }
 
     public void render(){
-        for(Tile t:tiles) t.draw();
+       // shader.bind();
+        for(Tile t:tiles) if(Math.abs(t.getXY()[0]-main.getPos().x)<2f  && Math.abs(t.getXY()[1]-main.getPos().y)<2f) t.draw();
+       // shader.unbind();
+       // for(Tile t:tiles) t.draw();
     }
 
     public void loadMap(String filename) throws IOException {
@@ -56,14 +59,14 @@ public class TileMap {
            // int temy=(i+1) / (MapWidth+1) + 1;
             int temx=((i) % MapWidth);
             int temy=((i) / MapWidth);
-            float x=0+temx*tilesize;
-            float y=0-temy*tilesize;
+            float x=-MapWidth*tilesize/2+temx*tilesize;
+            float y=MapHeight*tilesize/2-temy*tilesize;
 
             boolean is=false;
             byte[] temb={b[i*4],b[i*4+1],b[i*4+2],b[i*4+3]};
             tem=convertirOctetEnEntier(temb);
             if(d[i]!=0) is=true;
-            Tile tt=new Tile(x,y,tilesize,shader,camera,tileSet);
+            Tile tt=new Tile(x,y,tilesize,tileSet);
             tt.setSolid(is);
             tt.setId(tem);
             tiles.add(tt);

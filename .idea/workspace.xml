@@ -2,20 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da18324-6a20-401a-8cd7-31ba6b7fa477" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Entity/UnMovable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Map/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Map/TileMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/鄉村之道.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/鄉村之道.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Map/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Map/TileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Map/TileMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Map/h.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Map/h.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Render/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Render/Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Sheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Render/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Texture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Movable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Movable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Map/Map$tile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Map/Map.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/鄉村之道.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/textures/鄉村之道.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Map/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Map/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Map/TileMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Map/TileMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Render/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Render/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Render/Sheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Render/Sheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Scenes/Scene.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Scenes/Scene.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Render/Texture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Render/Texture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,7 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584336136448</updated>
       <workItem from="1584336143974" duration="93873000" />
-      <workItem from="1585057375065" duration="16850000" />
+      <workItem from="1585057375065" duration="25948000" />
     </task>
     <servers />
   </component>
