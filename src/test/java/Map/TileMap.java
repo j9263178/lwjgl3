@@ -18,6 +18,7 @@ public class TileMap {
     private Camera camera;
     private Sheet tileSet;
     private ArrayList<Tile> tiles;
+    public ArrayList<Tile> Solids;
     private int MapWidth=0,MapHeight=0;
     float x=0;
     float y=0;
@@ -52,23 +53,25 @@ public class TileMap {
         byte[] d=decompress(c);
 
         int tem=0;
+        int tem2=0;
         tiles=new ArrayList<>();
+        Solids=new ArrayList<>();
         for(int i=0;i*4<b.length;i++){
 
-           // int temx=((i+1) % MapWidth!=0)? (i) % MapWidth: MapWidth;
-           // int temy=(i+1) / (MapWidth+1) + 1;
             int temx=((i) % MapWidth);
             int temy=((i) / MapWidth);
             float x=-MapWidth*tilesize/2+temx*tilesize;
             float y=MapHeight*tilesize/2-temy*tilesize;
-
-            boolean is=false;
             byte[] temb={b[i*4],b[i*4+1],b[i*4+2],b[i*4+3]};
             tem=convertirOctetEnEntier(temb);
-            if(d[i]!=0) is=true;
+
+            byte[] temd={d[i*4],d[i*4+1],d[i*4+2],d[i*4+3]};
+            tem2=convertirOctetEnEntier(temd);
+
             Tile tt=new Tile(x,y,tilesize,tileSet);
-            tt.setSolid(is);
             tt.setId(tem);
+            System.out.print(tem2+ " ");
+            if(tem2!=0) {tt.setSolid(true); Solids.add(tt);}
             tiles.add(tt);
         }
     }

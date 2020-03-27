@@ -1,3 +1,4 @@
+package MainGame;
 
 import GUI.SyncTimer;
 import Scenes.bulletTest;
@@ -79,7 +80,7 @@ public class HelloWorld {
         // Make the OpenGL context current
         glfwMakeContextCurrent(window);
         // Enable v-sync
-        glfwSwapInterval(0);
+        glfwSwapInterval(1);
         // Make the window visible
         glfwShowWindow(window);
     }
@@ -91,7 +92,7 @@ public class HelloWorld {
         glEnable(GL_TEXTURE_2D);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        GL11.glShadeModel(GL11.GL_SMOOTH);
+     //   GL11.glShadeModel(GL11.GL_SMOOTH);
         glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
 
         Scene currentScene=new bulletTest(window);
@@ -104,7 +105,7 @@ public class HelloWorld {
             currentScene.render();
             glfwSwapBuffers(window);
             glfwPollEvents();
-            test.sync(50);
+           // test.sync(50);
         }
     }
 

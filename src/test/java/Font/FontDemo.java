@@ -21,8 +21,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 /** STB Easy Font demo. */
 abstract class FontDemo {
 
-    protected final String text="FUCK";
-    private final   int    lineCount;
+    protected String text;
+    //private final   int    lineCount;
 
     private long window;
     private int ww = 800;
@@ -34,7 +34,7 @@ abstract class FontDemo {
 
     private boolean ctrlDown;
 
-    private int fontHeight;
+    private int fontHeight=0;
 
     private int   scale;
     private int   lineOffset;
@@ -48,7 +48,7 @@ abstract class FontDemo {
     protected FontDemo(int fontHeight, String filePath) {
         this.fontHeight = fontHeight;
         this.lineHeight = fontHeight;
-
+/*
         String t;
 
         int lc;
@@ -69,8 +69,11 @@ abstract class FontDemo {
             lc = 1;
         }
 
-       // text = t;
-        lineCount = lc;
+        lineCount = lc;*/
+    }
+
+    public void setText(String t){
+        this.text=t;
     }
 
     public String getText() {
@@ -79,6 +82,14 @@ abstract class FontDemo {
 
     public long getWindow() {
         return window;
+    }
+
+    public void setlineHeight(float h){
+        this.lineHeight=h;
+    }
+
+    public void setFontHeight(int fh){
+        this.fontHeight=fh;
     }
 
     public int getFontHeight() {
@@ -100,6 +111,8 @@ abstract class FontDemo {
     public int getLineOffset() {
         return lineOffset;
     }
+
+    public float getLineHeight(){return lineHeight;}
 
     public boolean isKerningEnabled() {
         return kerningEnabled;
@@ -205,7 +218,7 @@ abstract class FontDemo {
                     setLineOffset(0);
                     break;
                 case GLFW_KEY_END:
-                    setLineOffset(lineCount - wh / FontDemo.this.lineHeight);
+               //     setLineOffset(lineCount - wh / FontDemo.this.lineHeight);
                     break;
                 case GLFW_KEY_KP_ADD:
                 case GLFW_KEY_EQUAL:
@@ -264,12 +277,12 @@ abstract class FontDemo {
         setLineOffset(lineOffset);
     }
 
-    private void setLineOffset(float offset) {
+    protected void setLineOffset(float offset) {
         setLineOffset(round(offset));
     }
 
-    private void setLineOffset(int offset) {
-        lineOffset = max(0, min(offset, lineCount - (int)(wh / lineHeight)));
+    protected void setLineOffset(int offset) {
+      //  lineOffset = max(0, min(offset, lineCount - (int)(wh / lineHeight)));
     }
 
     protected abstract void loop();

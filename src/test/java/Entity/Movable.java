@@ -1,15 +1,17 @@
 package Entity;
 
+import Collision.AABB;
 import Render.Model;
+import org.joml.AABBf;
 import org.joml.Vector2f;
 
 public class Movable {
 
     protected float[] vertices,tex_coords,colors;
-    protected float d;
+    public float d;
     protected Vector2f pos,vel,acc; //,center;
     protected Model model;
-
+    public AABB box;
 
     public Movable(float x, float y, float size) {
 
@@ -43,6 +45,8 @@ public class Movable {
                 1.0f,1.0f,1.0f  //bottom left
         };
 
+       // this.box=new AABB(new Vector2f(pos.x,pos.y),new Vector2f(d,d));
+        this.box=new AABB(this.pos,d);
         model=new Model(vertices,tex_coords,colors);
     }
 
@@ -115,7 +119,9 @@ public class Movable {
         return this.acc;
     }
     public void update() {
-        //  this.box=new AABB(pos,size/2);
+        //this.box=new AABB(new Vector2f(pos.x,pos.y),new Vector2f(d,d));
+
+        this.box=new AABB(this.pos,d);
         if(!vel.equals(0, 0) || !acc.equals(0,0)) {
             vel.x+=0.1*acc.x;
             vel.y+=0.1*acc.y;

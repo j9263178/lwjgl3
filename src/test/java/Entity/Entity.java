@@ -1,20 +1,20 @@
 package Entity;
+import Collision.AABB;
 import  Render.*;
 import Render.Camera;
+import org.joml.AABBf;
 
-public class Entity extends Movable {
+public class Entity extends Movable implements Comparable<Entity>{
 
     private Model model;
     private Sheet sheet;
     private int i=0,j=0;
     private Shader shader;
     public boolean stopAnimation = false,visible=true,damageble=true;
-    private Camera camera;
 
-    public Entity(float x, float y, float size, Camera camera, Sheet sheet) {
+    public Entity(float x, float y, float size,Sheet sheet) {
         super(x, y, size);
         model=super.model;
-        this.camera=camera;
         this.sheet = sheet;
     }
 
@@ -45,5 +45,10 @@ public class Entity extends Movable {
         else i--;
     }
 
+    @Override
+    public int compareTo(Entity o) {
+        int cq=(int)(o.getPos().y*10000f);
+        return cq-(int)(this.pos.y*10000f);
+    }
 }
 

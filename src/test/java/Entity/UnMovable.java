@@ -1,13 +1,16 @@
 package Entity;
 
+import Collision.AABB;
 import Render.Model;
 import org.joml.Vector2f;
 
 public class UnMovable {
     protected float[] vertices,tex_coords,colors;
-    protected float d;
-    protected Vector2f pos;
+    public float d;
+    public Vector2f pos;
     protected Model model;
+
+    public AABB box;
 
     public UnMovable(float x, float y, float size) {
 
@@ -39,6 +42,7 @@ public class UnMovable {
                 1.0f,1.0f,1.0f  //bottom left
         };
 
+        this.box=new AABB(this.pos,d);
         model=new Model(vertices,tex_coords,colors);
     }
 }

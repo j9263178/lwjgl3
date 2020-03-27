@@ -5,6 +5,9 @@ package Font;/*
 
 
 import org.lwjgl.*;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL15;
+import org.lwjgl.opengl.GL20;
 
 import java.nio.*;
 
@@ -16,8 +19,10 @@ import static org.lwjgl.stb.STBEasyFont.*;
 public final class EasyFont extends FontDemo {
 
     private static final int BASE_HEIGHT = 12;
-
-    private EasyFont(String filePath) {
+    int quads;
+    int shit;
+    private ByteBuffer charBuffer;
+    public EasyFont(String filePath) {
         super(BASE_HEIGHT, filePath);
     }
 
@@ -25,22 +30,40 @@ public final class EasyFont extends FontDemo {
         String filePath;
         filePath = "/Users/joseph/eclipse-workspace/lwjgl2/Fonts/TaipeiSansTCBeta-Light.ttf";
 
-        new EasyFont(filePath).run("STB Easy Font Demo");
+        new EasyFont("").run("STB Easy Font Demo");
     }
 
-    @Override
-    protected void loop() {
+    public void init(){
         ByteBuffer charBuffer = BufferUtils.createByteBuffer(text.length() * 270);
 
-        int quads = stb_easy_font_print(0, 0, "(FUCK!)OK BOOMER", null, charBuffer);
+        int quads = stb_easy_font_print(0, 0, getText(), null, charBuffer);
 
         glEnableClientState(GL_VERTEX_ARRAY);
-
         glVertexPointer(2, GL_FLOAT, 16, charBuffer);
 
         glClearColor(43f / 255f, 43f / 255f, 43f / 255f, 0f); // BG color
-        glColor3f(110f / 255f, 183f / 255f, 198f / 255f); // Text color
+        glColor3f(169f / 255f, 183f / 255f, 198f / 255f); // Text color
 
+    }
+
+    public void draw(){
+        float scaleFactor = 1.0f + getScale() * 0.25f;
+
+        glPushMatrix();
+        // Zoom
+        glScalef(scaleFactor, scaleFactor, 1f);
+        // Scroll
+        glTranslatef(4.0f, 4.0f - getLineOffset() * getFontHeight(), 0f);
+
+        glDrawArrays(GL_QUADS, 0, quads * 4);
+
+        glPopMatrix();
+
+        glfwSwapBuffers(getWindow());
+
+    }
+    @Override
+    protected void loop() {
         while (!glfwWindowShouldClose(getWindow())) {
             glfwPollEvents();
 
