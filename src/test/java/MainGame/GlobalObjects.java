@@ -6,7 +6,7 @@ import Render.Shader;
 import Render.Sheet;
 
 public class GlobalObjects {
-
+    public static long window;
     public static Shader MainShader=new Shader("cs");
     public static double fps=60;
     public static Input MainInput;
@@ -19,6 +19,7 @@ public class GlobalObjects {
     public static GUI gui=new GUI();
 
     public static void initObj(long window){
+        GlobalObjects.window = window;
         MainInput=new Input(window);
     }
 }

@@ -2,6 +2,8 @@ package Scenes;
 import Font.EasyFont;
 import static MainGame.GlobalObjects.*;
 import static MainGame.HelloWorld.*;
+
+import Font.Truetype;
 import Map.*;
 import java.io.IOException;
 import java.util.*;
@@ -9,6 +11,7 @@ import Render.*;
 import GUI.Timer;
 import GUI.*;
 import Entity.*;
+import com.sun.source.tree.TryTree;
 import org.joml.Matrix2f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
@@ -26,7 +29,8 @@ public class bulletTest implements Scene {
     private int stateCounter,currentState;
     private boolean fire;
     private Animation animation;
-    EasyFont shit;
+    private ArrayList<Truetype> texts;
+    Truetype context,title;
 
     public bulletTest(long window) throws IOException {
         init();
@@ -34,8 +38,6 @@ public class bulletTest implements Scene {
     @Override
     public void render() {
 
-
-        glEnable(GL_TEXTURE_2D);
         MainShader.bind();
 
         mainCamera.getPosition().lerp(new Vector3f(0.64f*main.getPos().x,0.86f*main.getPos().y,0).mul(-1,new Vector3f()), 0.07f);
@@ -44,9 +46,9 @@ public class bulletTest implements Scene {
         s4m.bind();
         fuck.render();
 
-        onBossStates();
-        onBossAttack();
-        onPlayerDamage();
+    //    onBossStates();
+    //    onBossAttack();
+    //    onPlayerDamage();
 
         onCollision();
         onEntitiesDraw();
@@ -57,9 +59,13 @@ public class bulletTest implements Scene {
 
         MainShader.unbind();
 
+        //glDisable(GL_TEXTURE_2D);
 
-        glDisable(GL_TEXTURE_2D);
-        shit.loop();
+        //bitch.setText(String.valueOf(main.getPos().x));
+
+        for(Truetype t:texts){
+            t.loop();
+        }
 
         onInput();
         MainInput.update();
@@ -67,7 +73,17 @@ public class bulletTest implements Scene {
     }
     @Override
     public void init() throws IOException {
-        shit= new EasyFont(window);
+
+        texts=new ArrayList<>();
+
+        title=new Truetype(30);
+        title.yo=1200f;
+        title.setText("Undyne");
+        texts.add(title);
+        context=new Truetype(24);
+        context.yo=1300f;
+        context.setText("1238719823ㄙhuasdhisa\b\nIDHUH@&#)!@*#)");
+        texts.add(context);
 
         dead=false;
         s4bullet = new Sheet("test2", 7, 1,MainShader);
@@ -134,6 +150,7 @@ public class bulletTest implements Scene {
                 gui.onRecover(1);
                 main.visible=true;
                 dead=false;
+                texts.clear();
         }
 
     }

@@ -17,7 +17,7 @@ public class GUI {
         s4life=new Sheet("life",7,1,MainShader);
         life=new ArrayList<>();
         for(int i=0;i<7;i++){
-            life.add(new Entity(-1.4f+0.15f*i,-0.6f,0.15f,
+            life.add(new Entity(-1.4f+0.15f*i,0.6f,0.15f,
                     s4life));
         }
     }
@@ -38,12 +38,12 @@ public class GUI {
     public void onRecover(int times){
         if(dead){
             for(int i=0;i<7;i++){
-                life.add(new Entity(-1.4f+0.15f*i,-0.6f,0.15f,
+                life.add(new Entity(-1.4f+0.15f*i,0.6f,0.15f,
                         new Sheet("life",7,1,MainShader)));
             }
         }else{
             for(int i=0;i<times;i++){
-                life.add(new Entity(-1.4f+0.15f*(life.size()+i),-0.6f,0.15f,
+                life.add(new Entity(-1.4f+0.15f*(life.size()+i),0.6f,0.15f,
                         new Sheet("life",7,1,MainShader)));
             }
         }

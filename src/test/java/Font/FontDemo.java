@@ -29,6 +29,8 @@ abstract class FontDemo {
     private int ww = 800;
     private int wh = 600;
 
+    private final   int    lineCount=1;
+
     private float
             contentScaleX,
             contentScaleY;
@@ -50,7 +52,7 @@ abstract class FontDemo {
         this.fontHeight = fontHeight;
         this.lineHeight = fontHeight;
         this.window = window;
-        init("");
+        init();
 /*
         String t;
 
@@ -125,20 +127,6 @@ abstract class FontDemo {
         return lineBBEnabled;
     }
 
-    protected void run(String title) {
-        try {
-            init(title);
-
-            loop();
-        } finally {
-            try {
-                destroy();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     private void windowSizeChanged(long window, int width, int height) {
         if (Platform.get() != Platform.MACOSX) {
             width /= contentScaleX;
@@ -160,7 +148,7 @@ abstract class FontDemo {
         glViewport(0, 0, width, height);
     }
 
-    private void init(String title) {
+    private void init() {
       /*    GLFWErrorCallback.createPrint().set();
         if (!glfwInit()) {
             throw new IllegalStateException("Unable to initialize GLFW");
@@ -173,9 +161,7 @@ abstract class FontDemo {
 
         long monitor = glfwGetPrimaryMonitor();
 
-        int framebufferW;
-        int framebufferH;
-      /*  try (MemoryStack s = stackPush()) {
+        try (MemoryStack s = stackPush()) {
             FloatBuffer px = s.mallocFloat(1);
             FloatBuffer py = s.mallocFloat(1);
 
@@ -183,15 +169,9 @@ abstract class FontDemo {
 
             contentScaleX = px.get(0);
             contentScaleY = py.get(0);
+        }
 
-            if (Platform.get() == Platform.MACOSX) {
-                framebufferW = ww;
-                framebufferH = wh;
-            } else {
-                framebufferW = round(ww * contentScaleX);
-                framebufferH = round(wh * contentScaleY);
-            }
-        }*/
+        GLFWUtil.glfwInvoke(window, this::windowSizeChanged, FontDemo::framebufferSizeChanged);
 
        /* if (window == NULL) {
             throw new RuntimeException("Failed to create the GLFW window");
@@ -200,7 +180,7 @@ abstract class FontDemo {
         glfwSetWindowSizeCallback(window, this::windowSizeChanged);*/
       //  glfwSetFramebufferSizeCallback(window, FontDemo::framebufferSizeChanged);
 
-      /*  glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
+       /* glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
             ctrlDown = (mods & GLFW_MOD_CONTROL) != 0;
             if (action == GLFW_RELEASE) {
                 return;
@@ -253,6 +233,7 @@ abstract class FontDemo {
             }
         });*/
 
+
         // Center window
       /*  GLFWVidMode vidmode = Objects.requireNonNull(glfwGetVideoMode(monitor));
 
@@ -270,19 +251,11 @@ abstract class FontDemo {
       //  glfwSwapInterval(1);
       //  glfwShowWindow(window);
 
-        GLFWUtil.glfwInvoke(window, this::windowSizeChanged, FontDemo::framebufferSizeChanged);
 
-       /* glfwSetScrollCallback(window, (window, xoffset, yoffset) -> {
-            if (ctrlDown) {
-                setScale(scale + (int)round(yoffset));
-            } else {
-                setLineOffset(lineOffset - (int)round(yoffset) * 3);
-            }
-        });*/
 
     }
 
-    private void setScale(int scale) {
+    public void setScale(int scale) {
         this.scale = max(-3, scale);
         this.lineHeight = fontHeight * (1.0f + this.scale * 0.25f);
         setLineOffset(lineOffset);
@@ -293,7 +266,7 @@ abstract class FontDemo {
     }
 
     protected void setLineOffset(int offset) {
-      //  lineOffset = max(0, min(offset, lineCount - (int)(wh / lineHeight)));
+        lineOffset = max(0, min(offset, lineCount- (int)(wh / lineHeight)));
     }
 
     protected abstract void loop();
