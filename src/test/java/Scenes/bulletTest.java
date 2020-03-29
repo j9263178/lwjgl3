@@ -1,5 +1,4 @@
 package Scenes;
-import Font.EasyFont;
 import static MainGame.GlobalObjects.*;
 import static MainGame.HelloWorld.*;
 
@@ -15,22 +14,18 @@ import com.sun.source.tree.TryTree;
 import org.joml.Matrix2f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.lwjgl.system.CallbackI;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 
 public class bulletTest implements Scene {
     private Random r;
-    private TileMap fuck;
-    private Entity main;
-    private ArrayList<Entity> entitieList,bulletManager;
+    private ArrayList<Entity> bulletManager;
     private ArrayList<Timer> timers;
     private Sheet s4bullet,s4m;
     private int stateCounter,currentState;
     private boolean fire;
-    private Animation animation;
-    private ArrayList<Truetype> texts;
-    Truetype context,title;
 
     public bulletTest(long window) throws IOException {
         init();
@@ -40,74 +35,70 @@ public class bulletTest implements Scene {
 
         MainShader.bind();
 
-        mainCamera.getPosition().lerp(new Vector3f(0.64f*main.getPos().x,0.86f*main.getPos().y,0).mul(-1,new Vector3f()), 0.07f);
+        mainCamera.getPosition().lerp(new Vector3f(0.64f*FocusedPlayer.getPos().x,0.86f*FocusedPlayer.getPos().y,0).mul(-1,new Vector3f()), 0.07f);
         MainShader.setUniform("projection",mainCamera.getProjection().scale(256));
 
         s4m.bind();
-        fuck.render();
+        CurrentTileMap.render();
 
-    //    onBossStates();
-    //    onBossAttack();
+     //   onBossStates();
+     //   onBossAttack();
     //    onPlayerDamage();
-
-        onCollision();
+    //    onCollision();
         onEntitiesDraw();
         onAnimations();
 
+
         MainShader.setUniform("projection",guiCamera.getProjection().scale(256));
         onGUIupdate();
-
+        TestImage.draw();
         MainShader.unbind();
 
-        //glDisable(GL_TEXTURE_2D);
-
-        //bitch.setText(String.valueOf(main.getPos().x));
-
-        for(Truetype t:texts){
+        for(Truetype t:CurrentText){
             t.loop();
         }
-
         onInput();
         MainInput.update();
 
     }
     @Override
     public void init() throws IOException {
-
-        texts=new ArrayList<>();
-
-        title=new Truetype(30);
+        TestImage=new Entity(1.2f,-1f,2.5f,new Sheet("69992",1,1,MainShader));
+        Truetype title=new Truetype(30);
         title.yo=1200f;
-        title.setText("Undyne");
-        texts.add(title);
-        context=new Truetype(24);
+        title.setText("Fusi");
+        CurrentText.add(title);
+        Truetype context=new Truetype(24);
         context.yo=1300f;
-        context.setText("1238719823ㄙhuasdhisa\b\nIDHUH@&#)!@*#)");
-        texts.add(context);
+        context.setText("Djowqwefcuhwㄙhuasdhisa\b\nIDHUH@&#)!@*#)");
+        CurrentText.add(context);
+
+        gui.visible=false;
 
         dead=false;
-        s4bullet = new Sheet("test2", 7, 1,MainShader);
+        s4bullet = new Sheet("a_ln_t(已去底)", 3, 4,MainShader);
         s4m =new Sheet("pixil-frame-0",32,18,MainShader);
 
-
-        Entity hi2 = new Entity(0.2f,-0.4f,0.3f,
+        Entity hi2 = new Entity(0.2f,-0.4f,0.3f,0.4f,
                 player);
+        MainPlayer = hi2;
+        FocusedPlayer=MainPlayer;
 
-        main = hi2;
-
-        Entity hi = new Entity(0f, 0f, 0.3f,
+        Entity hi = new Entity(0f, 0f, 0.3f,0.4f,
                 s4bullet);
+        hi.setPose(2);
+        TestPlayer = hi;
 
-        entitieList =new ArrayList<>();
+        CurrentEntities =new ArrayList<>();
         timers =new ArrayList<>();
         bulletManager = new ArrayList<>();
 
-        timers.add(new Timer(fps));
+        timers.add(new Timer(5));
         timers.add(new Timer(3));
         timers.add(new Timer(1));
 
-        entitieList.add(hi);
-        entitieList.add(hi2);
+        CurrentEntities.add(hi);
+        CurrentEntities.add(hi2);
 
         stateCounter = 0;
         currentState = 0;
@@ -115,42 +106,38 @@ public class bulletTest implements Scene {
 
         r=new Random();
 
-        fuck =new TileMap(32,18,s4m,0.1f,mainCamera,main);
+        TileMap fuck =new TileMap(32,18,s4m,0.1f,mainCamera,MainPlayer);
         fuck.loadMap("/Users/joseph/lwjgl3/src/test/java/Map/h.txt");
+        CurrentTileMap=fuck;
 
     }
     public void onInput(){
 
-        if (MainInput.isKeyReleased(GLFW_KEY_D)){
-            main.addVel(-0.1f,0);}
-
-        if (MainInput.isKeyPressed(GLFW_KEY_D)){
-            main.addVel(0.1f,0);}
-
-        if (MainInput.isKeyReleased(GLFW_KEY_A)){
-            main.addVel(0.1f,0);}
-
-        if (MainInput.isKeyPressed(GLFW_KEY_A)){
-            main.addVel(-0.1f,0);}
-
-        if (MainInput.isKeyReleased(GLFW_KEY_S)){
-            main.addVel(0,0.1f);}
-
-        if (MainInput.isKeyPressed(GLFW_KEY_S)){
-            main.addVel(0,-0.1f);}
-
-        if (MainInput.isKeyReleased(GLFW_KEY_W)){
-            main.addVel(0f,-0.1f);}
-
-        if (MainInput.isKeyPressed(GLFW_KEY_W)){
-            main.addVel(0,0.1f);}
+        if (MainInput.isKeyDown(GLFW_KEY_S)){
+            MainPlayer.setPose(2);
+            MainPlayer.addPos(0,-0.01f);}
+        else if (MainInput.isKeyDown(GLFW_KEY_W)){
+            MainPlayer.setPose(0);
+            MainPlayer.addPos(0,0.01f);}
+        else if (MainInput.isKeyDown(GLFW_KEY_A)){
+            MainPlayer.setPose(3);
+            MainPlayer.addPos(-0.01f,0f);}
+        else if (MainInput.isKeyDown(GLFW_KEY_D)){
+            MainPlayer.setPose(1);
+            MainPlayer.addPos(0.01f,0f);}
 
         if (MainInput.isKeyPressed(GLFW_KEY_SPACE)){
                 //animation = new Animation(0f,0f,0.6f,0.3f,new Sheet("hihi5",12,1),MainShader);
                 gui.onRecover(1);
-                main.visible=true;
+                MainPlayer.visible=true;
                 dead=false;
-                texts.clear();
+                CurrentText.clear();
+        }
+        if (MainInput.isKeyPressed(GLFW_KEY_J)){
+            FocusedPlayer=MainPlayer;
+        }
+        if (MainInput.isKeyPressed(GLFW_KEY_K)){
+            FocusedPlayer=TestPlayer;
         }
 
     }
@@ -185,7 +172,7 @@ public class bulletTest implements Scene {
                         for (float[] pos : circleBulletsPos) {
                             Entity tem = new Entity(10f * pos[0], 10f * pos[1], 0.13f,
                                     s4bullet);
-                            tem.setAcc(0.018f * (main.getPos().x - tem.getPos().x), 0.018f * (main.getPos().y - tem.getPos().y));
+                            tem.setAcc(0.018f * (MainPlayer.getPos().x - tem.getPos().x), 0.018f * (MainPlayer.getPos().y - tem.getPos().y));
                             bulletManager.add(tem);
                         }
 
@@ -225,8 +212,8 @@ public class bulletTest implements Scene {
         }
         //judge
         for(Entity e :bulletManager){
-            if(Math.abs(e.getPos().x-main.getPos().x)<0.042f &&
-                    Math.abs(e.getPos().y-main.getPos().y)<0.042f){
+            if(Math.abs(e.getPos().x-MainPlayer.getPos().x)<0.042f &&
+                    Math.abs(e.getPos().y-MainPlayer.getPos().y)<0.042f){
                 if(e.damageble){
                     e.visible=false;
                     e.damageble=false;
@@ -237,8 +224,8 @@ public class bulletTest implements Scene {
     }
     public void onCollision(){
 
-        Entity a=main;
-        Entity b=entitieList.get(0);
+        Entity a=MainPlayer;
+        Entity b=CurrentEntities.get(0);
         if(a.box.test(b.box)){
             //System.out.println("FUCK");
             Vector2f posa=a.getPos();
@@ -260,7 +247,7 @@ public class bulletTest implements Scene {
 
         }
        // System.out.println(fuck.Solids.size());
-        for(Tile t: fuck.Solids){
+        for(Tile t: CurrentTileMap.Solids){
             if(a.box.test(t.box)){
               //  System.out.println("FUCK");
                 Vector2f posa=a.getPos();
@@ -282,17 +269,17 @@ public class bulletTest implements Scene {
             }
         }
 
-        for(int i=0;i<entitieList.size()-1;i++){
-            for(int j=i+1;j<entitieList.size();j++){
+        for(int i=0;i<CurrentEntities.size()-1;i++){
+            for(int j=i+1;j<CurrentEntities.size();j++){
             }
         }
     }
     public void onEntitiesDraw(){
         //update the y position order
-       // Collections.sort(entitieList);
+       // Collections.sort(CurrentEntities);
         timers.get(0).update();
         if (timers.get(0).isReset()) {
-            for(Entity e :entitieList) if(!e.stopAnimation) e.nextFrame();
+            for(Entity e :CurrentEntities) if(!e.stopAnimation) e.nextFrame();
             for(Entity e:gui.getLife()){
                 e.nextFrame();
             }
@@ -303,7 +290,7 @@ public class bulletTest implements Scene {
         timers.get(0).reset();
 
         //update and draw character
-        for(Entity e :entitieList){
+        for(Entity e :CurrentEntities){
             if(e.visible){
                 e.update();
                 e.draw();
@@ -318,13 +305,10 @@ public class bulletTest implements Scene {
 
     }
     public void onGUIupdate(){
-        gui.draw();
-        if(gui.getLife().isEmpty()) {main.visible=false; dead=true;}
+        if(gui.visible) gui.draw();
+        if(gui.getLife().isEmpty()) {MainPlayer.visible=false; dead=true;}
     }
     public void onAnimations(){
-        if(animation!=null&&!(animation.finish)){
-            animation.draw();
-        }
     }
     private void Rotate(float[][] in){
         for(float[] vec:in){

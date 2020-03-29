@@ -2,18 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da18324-6a20-401a-8cd7-31ba6b7fa477" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Font/Truetype.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Font/FontDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Font/FontDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid15692.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid20148.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid20178.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/hihi5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/山之道.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/鄉村之道.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Collision/AABB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Collision/AABB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Collision/Collision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/UnMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/UnMovable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Font/EasyFont.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Font/Glyph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Font/Truetype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Font/Truetype.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GUI/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GUI/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainGame/GlobalObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainGame/GlobalObjects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MainGame/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainGame/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Render/Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Render/Sheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/EasyFont.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Font/EasyFont.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/FontDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Font/FontDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/hihi5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/山之道.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/textures/鄉村之道.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Collision/AABB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Collision/AABB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Collision/Collision.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Movable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Movable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/UnMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/UnMovable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/EasyFont.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/Glyph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/Truetype.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Font/Truetype.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GUI/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GUI/Input.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MainGame/GlobalObjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainGame/GlobalObjects.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/MainGame/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainGame/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Render/Sheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Render/Sheet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -157,7 +182,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584336136448</updated>
       <workItem from="1584336143974" duration="93873000" />
-      <workItem from="1585057375065" duration="92092000" />
+      <workItem from="1585057375065" duration="100389000" />
     </task>
     <servers />
   </component>

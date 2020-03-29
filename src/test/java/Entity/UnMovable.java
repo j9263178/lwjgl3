@@ -42,7 +42,7 @@ public class UnMovable {
                 1.0f,1.0f,1.0f  //bottom left
         };
 
-        this.box=new AABB(this.pos,d);
+        this.box=new AABB(this.pos,new Vector2f(d,d));
         model=new Model(vertices,tex_coords,colors);
     }
 }

@@ -18,6 +18,12 @@ public class Entity extends Movable implements Comparable<Entity>{
         this.sheet = sheet;
     }
 
+    public Entity(float x, float y, float w,float h,Sheet sheet) {
+        super(x, y, w,h);
+        model=super.model;
+        this.sheet = sheet;
+    }
+
     public void setSheet(Sheet sheet) {
         this.sheet = sheet;
     }

@@ -11,7 +11,7 @@ import static MainGame.GlobalObjects.dead;
 public class GUI {
     private ArrayList<Entity> life;
     private Sheet s4life;
-    private boolean visible=true;
+    public boolean visible=true;
 
     public GUI(){
         s4life=new Sheet("life",7,1,MainShader);

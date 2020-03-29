@@ -32,8 +32,8 @@ public final class Truetype extends FontDemo {
     private int BITMAP_W,BITMAP_H;
     private int                   texID;
     private ByteBuffer bitmap;
-    public float gapFactor=0.9f;
-    public float xo=0,yo=0;
+    public float gapFactor=1.5f;
+    public float xo=100f,yo=0;
 
     public Truetype(int size) {
         super(size,window);

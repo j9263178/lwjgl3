@@ -8,7 +8,7 @@ import org.joml.Vector2f;
 public class Movable {
 
     protected float[] vertices,tex_coords,colors;
-    public float d;
+    public float w,h,d=0;
     protected Vector2f pos,vel,acc; //,center;
     protected Model model;
     public AABB box;
@@ -18,11 +18,12 @@ public class Movable {
         // sheets = new ArrayList<>();
         // center=new Vector2f(x-0.05f,y);
         // this.box=new AABB(pos,size/2);
-
+        this.w=size;
+        this.h=size;
         pos=new Vector2f(x,y);
         vel=new Vector2f(0,0);
         acc=new Vector2f(0,0);
-        d = size /2;
+        float d = size /2;
 
         vertices = new float[] {
                 pos.x -d,pos.y +d,0,    //top left
@@ -46,16 +47,12 @@ public class Movable {
         };
 
        // this.box=new AABB(new Vector2f(pos.x,pos.y),new Vector2f(d,d));
-        this.box=new AABB(this.pos,d);
+        this.box=new AABB(this.pos,new Vector2f(d,d));
         model=new Model(vertices,tex_coords,colors);
     }
 
     public Movable(float x, float y, float w,float h) {
-
-        // sheets = new ArrayList<>();
-        // center=new Vector2f(x-0.05f,y);
-        // this.box=new AABB(pos,size/2);
-
+        this.w=w; this.h=h;
         pos=new Vector2f(x,y);
         vel=new Vector2f(0,0);
         acc=new Vector2f(0,0);
@@ -81,7 +78,7 @@ public class Movable {
                 1.0f,1.0f,1.0f,	//bottom right
                 1.0f,1.0f,1.0f  //bottom left
         };
-
+        this.box=new AABB(this.pos,new Vector2f(w/2,h/2));
         model=new Model(vertices,tex_coords,colors);
     }
 
@@ -119,23 +116,20 @@ public class Movable {
         return this.acc;
     }
     public void update() {
-        //this.box=new AABB(new Vector2f(pos.x,pos.y),new Vector2f(d,d));
+          this.box=new AABB(new Vector2f(pos.x,pos.y),new Vector2f(w/2,h/2));
 
-        this.box=new AABB(this.pos,d);
-        if(!vel.equals(0, 0) || !acc.equals(0,0)) {
             vel.x+=0.1*acc.x;
             vel.y+=0.1*acc.y;
             pos.x+=0.1*vel.x;
             pos.y+=0.1*vel.y;
 
             vertices = new float[] {
-                    pos.x-d,pos.y+d,0,  //top left
-                    pos.x+d,pos.y+d,0,	//top right
-                    pos.x+d,pos.y-d,0,	//bottom right
-                    pos.x-d,pos.y-d,0   //bottom left
+                    pos.x-w/2,pos.y+h/2,0,  //top left
+                    pos.x+w/2,pos.y+h/2,0,	//top right
+                    pos.x+w/2,pos.y-h/2,0,	//bottom right
+                    pos.x-w/2,pos.y-h/2,0   //bottom left
             };
             model.setVertices(vertices);
-        }
     }
 
 

@@ -43,7 +43,10 @@ public class Input {
         mousePos.set((float)x[0],(float)y[0]);
         return mousePos;
     }
-
+    public boolean anyKeyDown(){
+        for(boolean key:keys) if(key) return true;
+        return false;
+    }
     public void update() {
         for (int i = 32; i < GLFW_KEY_LAST; i++)
             keys[i] = isKeyDown(i);

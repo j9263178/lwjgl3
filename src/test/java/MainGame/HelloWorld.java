@@ -1,12 +1,8 @@
 package MainGame;
 
-import GUI.Input;
-import GUI.SyncTimer;
-import Render.Camera;
-import Render.Shader;
-import Render.Sheet;
 import Scenes.bulletTest;
 import Scenes.Scene;
+import static MainGame.GlobalObjects.*;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
@@ -51,7 +47,7 @@ public class HelloWorld {
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE); // the window will be resizable
         glfwWindowHint(GLFW_FOCUS_ON_SHOW, GLFW_TRUE); // the window will be input focused when it's showed
         // Create the window
-        window = glfwCreateWindow(800, 600, "Hello World!", NULL, NULL);
+        window = glfwCreateWindow(1024, 700, "Hello World!", NULL, NULL);
         if ( window == NULL )
             throw new RuntimeException("Failed to create the GLFW window");
 
@@ -96,13 +92,12 @@ public class HelloWorld {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         GL11.glShadeModel(GL11.GL_SMOOTH);
         glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
-
         GlobalObjects.initObj(window);
+        CurrentScene=new bulletTest(window);
 
-        Scene currentScene=new bulletTest(window);
         while ( !glfwWindowShouldClose(window) ) {
             glClear(GL_COLOR_BUFFER_BIT |GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // clear the framebuffer
-            currentScene.render();
+            CurrentScene.render();
             glfwSwapBuffers(window);
             glfwPollEvents();
         }

@@ -26,6 +26,7 @@ public class Sheet extends Texture {
         scale.translate(x,y,0,translation);
         shader.setUniform("texmodifier", translation);
     }
+
     public void bind_on_tile(int x, int y) {
         scale.translate(x-1,y-1,0,translation);
         shader.setUniform("texmodifier", translation);
