@@ -70,7 +70,7 @@ public class TileMap {
 
             Tile tt=new Tile(x,y,tilesize,tileSet);
             tt.setId(tem);
-            System.out.print(tem2+ " ");
+          //  System.out.print(tem2+ " ");
             if(tem2!=0) {tt.setSolid(true); Solids.add(tt);}
             tiles.add(tt);
         }

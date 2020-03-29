@@ -6,6 +6,7 @@ import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
 
+import java.awt.*;
 import java.io.*;
 import java.nio.*;
 import java.util.*;
@@ -45,9 +46,11 @@ abstract class FontDemo {
 
     private Callback debugProc;
 
-    protected FontDemo(int fontHeight, String filePath) {
+    protected FontDemo(int fontHeight, long window) {
         this.fontHeight = fontHeight;
         this.lineHeight = fontHeight;
+        this.window = window;
+        init("");
 /*
         String t;
 
@@ -158,21 +161,21 @@ abstract class FontDemo {
     }
 
     private void init(String title) {
-        GLFWErrorCallback.createPrint().set();
+      /*    GLFWErrorCallback.createPrint().set();
         if (!glfwInit()) {
             throw new IllegalStateException("Unable to initialize GLFW");
-        }
+        }*/
 
-        glfwDefaultWindowHints();
+      /*  glfwDefaultWindowHints();
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
-        glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+        glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);*/
 
         long monitor = glfwGetPrimaryMonitor();
 
         int framebufferW;
         int framebufferH;
-        try (MemoryStack s = stackPush()) {
+      /*  try (MemoryStack s = stackPush()) {
             FloatBuffer px = s.mallocFloat(1);
             FloatBuffer py = s.mallocFloat(1);
 
@@ -188,17 +191,16 @@ abstract class FontDemo {
                 framebufferW = round(ww * contentScaleX);
                 framebufferH = round(wh * contentScaleY);
             }
-        }
+        }*/
 
-        this.window = glfwCreateWindow(framebufferW, framebufferH, title, NULL, NULL);
-        if (window == NULL) {
+       /* if (window == NULL) {
             throw new RuntimeException("Failed to create the GLFW window");
         }
 
-        glfwSetWindowSizeCallback(window, this::windowSizeChanged);
-        glfwSetFramebufferSizeCallback(window, FontDemo::framebufferSizeChanged);
+        glfwSetWindowSizeCallback(window, this::windowSizeChanged);*/
+      //  glfwSetFramebufferSizeCallback(window, FontDemo::framebufferSizeChanged);
 
-        glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
+      /*  glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
             ctrlDown = (mods & GLFW_MOD_CONTROL) != 0;
             if (action == GLFW_RELEASE) {
                 return;
@@ -241,34 +243,43 @@ abstract class FontDemo {
                     kerningEnabled = !kerningEnabled;
                     break;
             }
-        });
+        });*/
 
-        glfwSetScrollCallback(window, (window, xoffset, yoffset) -> {
+       /* glfwSetScrollCallback(window, (window, xoffset, yoffset) -> {
             if (ctrlDown) {
                 setScale(scale + (int)round(yoffset));
             } else {
                 setLineOffset(lineOffset - (int)round(yoffset) * 3);
             }
-        });
+        });*/
 
         // Center window
-        GLFWVidMode vidmode = Objects.requireNonNull(glfwGetVideoMode(monitor));
+      /*  GLFWVidMode vidmode = Objects.requireNonNull(glfwGetVideoMode(monitor));
 
         glfwSetWindowPos(
                 window,
                 (vidmode.width() - framebufferW) / 2,
                 (vidmode.height() - framebufferH) / 2
-        );
+        );*/
 
         // Create context
-        glfwMakeContextCurrent(window);
-        GL.createCapabilities();
-        debugProc = GLUtil.setupDebugMessageCallback();
+        //glfwMakeContextCurrent(window);
+        //GL.createCapabilities();
+      //  debugProc = GLUtil.setupDebugMessageCallback();
 
-        glfwSwapInterval(1);
-        glfwShowWindow(window);
+      //  glfwSwapInterval(1);
+      //  glfwShowWindow(window);
 
         GLFWUtil.glfwInvoke(window, this::windowSizeChanged, FontDemo::framebufferSizeChanged);
+
+       /* glfwSetScrollCallback(window, (window, xoffset, yoffset) -> {
+            if (ctrlDown) {
+                setScale(scale + (int)round(yoffset));
+            } else {
+                setLineOffset(lineOffset - (int)round(yoffset) * 3);
+            }
+        });*/
+
     }
 
     private void setScale(int scale) {

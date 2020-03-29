@@ -1,6 +1,10 @@
 package MainGame;
 
+import GUI.Input;
 import GUI.SyncTimer;
+import Render.Camera;
+import Render.Shader;
+import Render.Sheet;
 import Scenes.bulletTest;
 import Scenes.Scene;
 import org.lwjgl.*;
@@ -15,8 +19,7 @@ import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 public class HelloWorld {
-
-    private long window;
+    public static long window;
 
     public void run() throws Exception {
         System.out.println("Hello LWJGL " + Version.getVersion() + "!");
@@ -79,6 +82,8 @@ public class HelloWorld {
 
         // Make the OpenGL context current
         glfwMakeContextCurrent(window);
+
+        GL.createCapabilities();
         // Enable v-sync
         glfwSwapInterval(1);
         // Make the window visible
@@ -86,27 +91,23 @@ public class HelloWorld {
     }
 
     private void loop() throws Exception {
-        GL.createCapabilities();
 
-        // Important for texture rendering
-        glEnable(GL_TEXTURE_2D);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-     //   GL11.glShadeModel(GL11.GL_SMOOTH);
+        GL11.glShadeModel(GL11.GL_SMOOTH);
         glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
 
+        GlobalObjects.initObj(window);
+
         Scene currentScene=new bulletTest(window);
-
-        SyncTimer test = new SyncTimer(SyncTimer.LWJGL_GLFW);
-        test.setNewMode(1);
         while ( !glfwWindowShouldClose(window) ) {
-
             glClear(GL_COLOR_BUFFER_BIT |GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // clear the framebuffer
             currentScene.render();
             glfwSwapBuffers(window);
             glfwPollEvents();
-           // test.sync(50);
         }
+
+        glDisableClientState(GL_VERTEX_ARRAY);
     }
 
     public static void main(String[] args) throws Exception {

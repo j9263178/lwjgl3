@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7da18324-6a20-401a-8cd7-31ba6b7fa477" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Collision/AABB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Collision/Collision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Font/MyFont.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Font/Glyph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GUI/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MainGame/GlobalObjects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Entity/UnMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Entity/UnMovable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Font/EasyFont.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Font/EasyFont.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Font/FontDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Font/FontDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Font/Truetype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Font/Truetype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainGame/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Font/MyFont.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Font/Truetype.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainGame/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainGame/HelloWorld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Map/TileMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Map/TileMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/Movable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/Movable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Entity/UnMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Entity/UnMovable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Font/EasyFont.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Font/EasyFont.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Font/FontDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Font/FontDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/Truetype.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Font/Truetype.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HelloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/MyFont.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Font/Truetype.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MainGame/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainGame/HelloWorld.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Map/TileMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Map/TileMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Scenes/bulletTest.class" afterDir="false" />
     </list>
@@ -166,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584336136448</updated>
       <workItem from="1584336143974" duration="93873000" />
-      <workItem from="1585057375065" duration="61095000" />
+      <workItem from="1585057375065" duration="81962000" />
     </task>
     <servers />
   </component>
@@ -185,19 +182,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/Scenes/bulletTest.java</url>
-          <line>71</line>
-          <properties class="Scenes.bulletTest" method="init">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
